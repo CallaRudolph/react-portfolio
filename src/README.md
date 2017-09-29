@@ -1,4 +1,4 @@
-You will need your own API Key from [GitHub](https://github.com/settings/tokens/new):
+You may need your own API Key from [GitHub](https://github.com/settings/tokens/new):
 
 * Visit the website, add a Token description, and select scopes (read-only scopes are recommended).
 * Generare token.
