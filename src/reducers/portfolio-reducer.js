@@ -16,7 +16,7 @@ const portfolio = (state = defaultState, action) => {
       });
       return newState;
     case types.DISPLAY_PORTFOLIO:
-      portfolio = state[action.portfolioId];
+      portfolio = [action.portfolioId];
       newPortfolio = Object.assign({}, portfolio, {
         isFetching: false,
         url: action.url,
@@ -26,8 +26,8 @@ const portfolio = (state = defaultState, action) => {
         repos: action.repos,
         portfolioId: action.portfolioId
       });
-      newState = Object.assign({}, state, {
-        [action.portfolioId]: newPortfolio
+      newState = Object.assign({}, {
+        ["Portfolio"]: newPortfolio
       });
       return newState;
     default:
