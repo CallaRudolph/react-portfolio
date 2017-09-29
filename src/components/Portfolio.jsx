@@ -1,13 +1,22 @@
 import React from 'react';
 import Entry from './Entry';
 import { connect } from 'react-redux';
+import Dots from './../images/dots.jpg';
+import Blood from './../images/blood.jpg';
 
 const Portfolio = ({ dispatch, portfolio }) => {
   let formAreaContent;
   var avatar = {
     width: "150",
     height: "150",
-    float: "right"
+    float: "right",
+    borderRadius: "10"
+  }
+  var content = {
+    backgroundImage: "url(" + Blood + ")",
+    textShadow: "1px 1px #218380",
+    opacity: ".87",
+    color: "#218380"
   }
   if (portfolio.portfolioId === 0) {
     formAreaContent =
@@ -16,19 +25,18 @@ const Portfolio = ({ dispatch, portfolio }) => {
       </div>
   } else if (portfolio.calla.blog === "") {
     formAreaContent =
-    <div className="well">
+    <div style={content} className="well">
       <h1>{portfolio.calla.location}</h1>
     </div>
   } else {
     formAreaContent =
-    <div className="well">
+    <div style={content} className="well">
       <img style={avatar} src={portfolio.calla.image}/>
       <h2>{portfolio.calla.name}</h2>
-      <h4><em>{portfolio.calla.location}</em></h4>
-      <a href={portfolio.calla.url}>GitHub</a>
-      <br/>
-      <a href={portfolio.calla.blog}>LinkedIn</a>
-      <h4>Projects: <em>{portfolio.calla.repos}</em></h4>
+      <h3><em>{portfolio.calla.location}</em></h3>
+      <h4>There's much more info on my <a href={portfolio.calla.url}>GitHub</a></h4>
+      <h4>or you could peruse my <a href={portfolio.calla.blog}>LinkedIn</a></h4>
+    <h4>Total projects I've created since May 2017:</h4> <h2><em>{portfolio.calla.repos}</em> !!</h2>
     </div>
   }
   return (
