@@ -1,7 +1,8 @@
 import React from 'react';
 import Entry from './Entry';
+import { connect } from 'react-redux';
 
-function Portfolio(props) {
+const Portfolio = ({ dispatch, portfolio }) => {
   return (
     <div>
       <Entry/>
@@ -9,4 +10,12 @@ function Portfolio(props) {
   );
 }
 
-export default Portfolio;
+const mapStateToProps = state => {
+  console.log(state);
+  const portfolio = state;
+  return {
+    portfolio: portfolio
+  };
+};
+
+export default connect(mapStateToProps)(Portfolio);

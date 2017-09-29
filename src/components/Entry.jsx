@@ -1,17 +1,24 @@
 import React from 'react';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
+import { fetchPortfolio } from './../actions';
 
-function Entry(props) {
-
-  function handleEntry() {
-    console.log(props);
+class Entry extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleEntry = this.handleEntry.bind(this);
   }
 
-  return (
-    <div>
-      <button onClick={handleEntry}>Enter here</button>
-    </div>
-  );
+  handleEntry() {
+    this.props.dispatch(fetchPortfolio());
+  }
+
+  render () {
+    return (
+      <div>
+        <button onClick={this.handleEntry}>Enter here</button>
+      </div>
+    );
+  }
 }
 
 export default connect()(Entry);
