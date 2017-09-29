@@ -14,6 +14,12 @@ const portfolio = (state = defaultState, action) => {
         [action.portfolioId]: newPortfolio
       });
       return newState;
+    case types.DISPLAY_PORTFOLIO:
+      newPortfolio = {
+
+      };
+      newState = [];
+      return newState;
     default:
       return state;
   }
