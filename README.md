@@ -14,6 +14,8 @@ Special thanks to GitHub's API: https://developer.github.com/v3/
 
 ![Portfolio](src/images/portfolio.png)
 
+![Resume](src/images/resume.png)
+
 ## Prerequisites
 * [Node.js](https://nodejs.org/) (with NPM)
 

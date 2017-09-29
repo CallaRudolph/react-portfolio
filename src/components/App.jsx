@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import Header from './Header';
 import Images from './Images';
 import Background from './../images/background.jpg';
+import Resume from './Resume';
 
 function App(props) {
   var backgroundStyle = {
@@ -24,6 +25,7 @@ function App(props) {
       <Switch>
         <Route exact path="/" component={Portfolio}/>
         <Route path="/images" component={Images}/>
+        <Route path="/resume" component={Resume}/>
         <Images/>
       </Switch>
     </div>

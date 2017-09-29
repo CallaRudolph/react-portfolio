@@ -21,7 +21,7 @@ function Header(){
           <h4><em>Thanks, <a href="https://developer.github.com/v3/">GitHub API</a></em></h4>
         </div>
         <div style={link} className="nav navbar-nav navbar-right">
-          <h4><Link to="/">Portfolio</Link> | <Link to="/images">Images</Link></h4>
+          <h4><Link to="/">Portfolio</Link> | <Link to="/images">Images</Link> | <Link to="/resume">Resume</Link></h4>
         </div>
       </div>
     </div>
