@@ -3,6 +3,7 @@ import constants from './../../src/constants';
 import * as actions from './../../src/actions';
 
 describe("Portfolio reducer", () => {
+  const { defaultState, types } = constants;
 
   it("should return equivalent state if no action type is recognized", () => {
     expect(portfolio([], { type: null })).toEqual([]);
@@ -14,7 +15,7 @@ describe("Portfolio reducer", () => {
       isFetching: true,
       portfolioId: action.portfolioId
     };
-    expect(portfolio(defaultState.portfolio, action)[action.portfolio.Id])
+    expect(portfolio(defaultState.portfolio, action)[action.portfolioId])
     .toEqual(newObject);
   });
 

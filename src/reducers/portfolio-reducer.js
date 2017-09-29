@@ -7,9 +7,12 @@ const portfolio = (state = defaultState, action) => {
   switch (action.type) {
     case types.REQUEST_PORTFOLIO:
       newPortfolio = {
-
+        isFetching: true,
+        portfolioId: action.portfolioId
       };
-      newState = []
+      newState = Object.assign({}, state, {
+        [action.portfolioId]: newPortfolio
+      });
       return newState;
     default:
       return state;
