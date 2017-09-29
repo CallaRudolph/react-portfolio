@@ -26,7 +26,6 @@ export function fetchPortfolio() {
       response => response.json(),
       error => console.log("An error occurred.", error)
     ).then(function(json) {
-      console.log(json);
       if (json.id > 1) {
         const image = json.avatar_url;
         const url = json.html_url;
@@ -36,7 +35,7 @@ export function fetchPortfolio() {
         const repos = json.public_repos;
         dispatch(displayPortfolio(image, url, name, blog, location, repos, portfolioId));
       } else {
-        console.log("error");
+        dispatch(displayPortfolio("", "", "Error, apologies", "", "Error, apologies", "", portfolioId))
       }
     });
   };

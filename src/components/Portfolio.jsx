@@ -9,6 +9,11 @@ const Portfolio = ({ dispatch, portfolio }) => {
       <div>
         <Entry/>
       </div>
+  } else if (portfolio.calla.blog === "") {
+    formAreaContent =
+    <div>
+      <h1>{portfolio.calla.location}</h1>
+    </div>
   } else {
     formAreaContent =
     <div className="well">
