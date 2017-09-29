@@ -40,3 +40,35 @@ export function fetchPortfolio() {
     });
   };
 }
+
+export const requestRepos = () => ({
+  type: types.REQUEST_REPOS
+});
+
+export function fetchRepos() {
+  const name = [];
+  const description = [];
+  const cloneUrl = [];
+  return function (dispatch) {
+    dispatch(requestRepos());
+    return fetch("https://api.github.com/users/CallaRudolph/starred")
+    .then(
+      response => response.json(),
+      error => console.log("A repo error occurred", error)
+    ).then(function(json) {
+      if (json.length > 1) {
+        console.log(json);
+        for (var i = 0; i < json.length; i++) {
+          if (json[i].owner.login === "CallaRudolph") {
+            name.push(json[i].name);
+            description.push(json[i].description);
+            cloneUrl.push(json[i].clone_url);
+          }
+        }
+        console.log(name);
+        console.log(description);
+        console.log(cloneUrl);
+      }
+    });
+  };
+}

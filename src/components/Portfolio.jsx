@@ -2,6 +2,7 @@ import React from 'react';
 import Entry from './Entry';
 import { connect } from 'react-redux';
 import Blood from './../images/blood.jpg';
+import Repos from './Repos';
 
 const Portfolio = ({ dispatch, portfolio }) => {
   let formAreaContent;
@@ -35,7 +36,8 @@ const Portfolio = ({ dispatch, portfolio }) => {
       <h3><em>{portfolio.calla.location}</em></h3>
       <h4>There's much more info on my <a href={portfolio.calla.url}>GitHub</a></h4>
       <h4>or you could peruse my <a href={portfolio.calla.blog}>LinkedIn</a></h4>
-    <h4>Total projects I've created since May 2017:</h4> <h2><em>{portfolio.calla.repos}</em> !!</h2>
+      <h4>Total projects I've created since May 2017:</h4> <h2><em>{portfolio.calla.repos}</em> !!</h2>
+      <Repos/>
     </div>
   }
   return (
