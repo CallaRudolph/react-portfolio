@@ -12,7 +12,7 @@ const Portfolio = ({ dispatch, portfolio }) => {
   } else {
     formAreaContent =
     <div>
-      <p>yay</p>
+      <p>{portfolio.portfolio.name}</p>
     </div>
   }
   return (

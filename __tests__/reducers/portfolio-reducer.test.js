@@ -30,7 +30,7 @@ describe("Portfolio reducer", () => {
       repos: action.repos,
       portfolioId: action.portfolioId
     };
-    expect(portfolio(defaultState.portfolio, action)[action.portfolioId])
+    expect(portfolio(defaultState.portfolio, action)["portfolio"])
     .toEqual(newObject);
   });
 

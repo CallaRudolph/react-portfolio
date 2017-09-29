@@ -6,6 +6,11 @@ export const requestPortfolio = (portfolioId) => ({
   portfolioId: portfolioId
 });
 
+export const selectedPortfolio = (portfolioId) => ({
+  type: types.SELECT_PORTFOLIO,
+  portfolioId: portfolioId
+});
+
 export const displayPortfolio = (url, name, blog, location, repos, portfolioId) => ({
   type: types.DISPLAY_PORTFOLIO,
   url,
@@ -33,6 +38,7 @@ export function fetchPortfolio() {
         const location = json.location;
         const repos = json.public_repos;
         dispatch(displayPortfolio(url, name, blog, location, repos, portfolioId));
+        // dispatch(selectedPortfolio(portfolioId));
       } else {
         console.log("error");
       }
