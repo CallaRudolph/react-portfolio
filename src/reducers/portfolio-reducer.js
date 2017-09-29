@@ -1,5 +1,5 @@
 const portfolio = (state = [], action) => {
-    return state;
+  return state;
 }
 
 export default portfolio;

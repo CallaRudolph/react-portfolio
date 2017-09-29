@@ -1,9 +1,10 @@
 import React from 'react';
+import { connect } from "react-redux";
 
 function Entry(props) {
 
   function handleEntry() {
-    console.log("button clicked");
+    console.log(props);
   }
 
   return (
@@ -13,4 +14,4 @@ function Entry(props) {
   );
 }
 
-export default Entry;
+export default connect()(Entry);
