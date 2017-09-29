@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchPortfolio } from './../actions';
+import { Button } from 'react-bootstrap';
 
 class Entry extends React.Component {
   constructor(props) {
@@ -13,9 +14,18 @@ class Entry extends React.Component {
   }
 
   render () {
+    var button = {
+      backgroundColor: "#FF331F",
+      color: "white"
+    }
     return (
       <div>
-        <button onClick={this.handleEntry}>Enter here</button>
+        <Button style={button}
+                bsSize="large"
+                block
+                onClick={this.handleEntry}>
+                welcome... who am i ?
+        </Button>
       </div>
     );
   }
