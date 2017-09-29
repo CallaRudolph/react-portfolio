@@ -11,8 +11,14 @@ const Portfolio = ({ dispatch, portfolio }) => {
       </div>
   } else {
     formAreaContent =
-    <div>
-      <p>{portfolio.portfolio.name}</p>
+    <div className="well">
+      <img src={portfolio.calla.image}/>
+      <h2>{portfolio.calla.name}</h2>
+      <h4><em>{portfolio.calla.location}</em></h4>
+      <a href={portfolio.calla.url}>GitHub</a>
+      <br/>
+      <a href={portfolio.calla.blog}>LinkedIn</a>
+      <p>Projects: <em>{portfolio.calla.repos}</em></p>
     </div>
   }
   return (

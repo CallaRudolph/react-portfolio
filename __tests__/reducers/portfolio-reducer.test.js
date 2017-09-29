@@ -20,9 +20,10 @@ describe("Portfolio reducer", () => {
   });
 
   it("should update state on receive portfolio", () => {
-    const action = actions.displayPortfolio("https://api/github.com", "Portfolio", "https://www.blog.com", "Buffalo, NY", "0", 0);
+    const action = actions.displayPortfolio("image.jpg", "https://api/github.com", "Portfolio", "https://www.blog.com", "Buffalo, NY", "0", 0);
     const newObject = {
       isFetching: false,
+      image: action.image,
       url: action.url,
       name: action.name,
       blog: action.blog,
@@ -30,7 +31,7 @@ describe("Portfolio reducer", () => {
       repos: action.repos,
       portfolioId: action.portfolioId
     };
-    expect(portfolio(defaultState.portfolio, action)["portfolio"])
+    expect(portfolio(defaultState.portfolio, action)["calla"])
     .toEqual(newObject);
   });
 

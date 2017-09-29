@@ -3,10 +3,9 @@ import apiKey from '../../.env';
 import Portfolio from './Portfolio';
 
 function App(props) {
-  console.log(apiKey);
   return (
     <div className="container">
-      <h2>Calla Rudolph's Portfolio</h2>
+      <h2>GitHub Portfolio</h2>
       <Portfolio/>
     </div>
   );
