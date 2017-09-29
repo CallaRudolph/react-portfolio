@@ -1,13 +1,20 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import Dots from './../images/dots.jpg';
 
 function Header(){
   var link = {
     paddingTop: "10",
     paddingRight: "5"
   }
+  var header = {
+    backgroundImage: "url(" + Dots + ")",
+    textShadow: "1px 1px white",
+    opacity: ".87",
+    color: "#290025"
+  }
   return (
-    <div className="navbar navbar-default">
+    <div style={header} className="navbar navbar-default">
       <div className="container-fluid">
         <div className="navbar-header">
           <h3>Portfolio</h3>

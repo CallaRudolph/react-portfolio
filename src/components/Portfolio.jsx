@@ -1,7 +1,6 @@
 import React from 'react';
 import Entry from './Entry';
 import { connect } from 'react-redux';
-import Dots from './../images/dots.jpg';
 import Blood from './../images/blood.jpg';
 
 const Portfolio = ({ dispatch, portfolio }) => {
@@ -14,9 +13,9 @@ const Portfolio = ({ dispatch, portfolio }) => {
   }
   var content = {
     backgroundImage: "url(" + Blood + ")",
-    textShadow: "1px 1px #218380",
+    textShadow: "1px 1px white",
     opacity: ".87",
-    color: "#218380"
+    color: "#69585F"
   }
   if (portfolio.portfolioId === 0) {
     formAreaContent =
