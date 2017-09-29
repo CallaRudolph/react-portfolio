@@ -8,7 +8,9 @@ import Fear from "./../images/fear.jpg";
 
 function Images(){
   var h2 = {
-    textAlign: "center"
+    textAlign: "center",
+    color: "white",
+    textShadow: "1px 1px black"
   }
   var image = {
     margin: "5",
