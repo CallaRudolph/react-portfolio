@@ -7,6 +7,7 @@ import reducer from './reducers/portfolio-reducer';
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
+import { HashRouter } from 'react-router-dom';
 
 const loggerMiddleware = createLogger();
 
@@ -20,7 +21,9 @@ const store = createStore(
 
 ReactDOM.render(
  <Provider store={store}>
-   <App />
+   <HashRouter>
+     <App />
+   </HashRouter>
  </Provider>,
  document.getElementById('react-app-root')
 );
