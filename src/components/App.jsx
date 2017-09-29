@@ -15,7 +15,8 @@ function App(props) {
     left: 0,
     width: "100%",
     height: "100%",
-    zIndex: 9999
+    zIndex: 9999,
+    fontFamily: "'Josefin Sans', sans-serif"
   }
   return (
     <div style={backgroundStyle} className="container">
