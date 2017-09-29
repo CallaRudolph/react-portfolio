@@ -41,8 +41,17 @@ export function fetchPortfolio() {
   };
 }
 
-export const requestRepos = () => ({
-  type: types.REQUEST_REPOS
+export const requestRepos = (repoId) => ({
+  type: types.REQUEST_REPOS,
+  repoId: repoId
+});
+
+export const displayRepos = (name, description, cloneUrl, repoId) => ({
+  type: types.DISPLAY_REPOS,
+  name,
+  description,
+  cloneUrl,
+  repoId
 });
 
 export function fetchRepos() {
@@ -50,7 +59,8 @@ export function fetchRepos() {
   const description = [];
   const cloneUrl = [];
   return function (dispatch) {
-    dispatch(requestRepos());
+    const repoId = v4();
+    dispatch(requestRepos(repoId));
     return fetch("https://api.github.com/users/CallaRudolph/starred")
     .then(
       response => response.json(),
@@ -65,10 +75,10 @@ export function fetchRepos() {
             cloneUrl.push(json[i].clone_url);
           }
         }
-        console.log(name);
-        console.log(description);
-        console.log(cloneUrl);
-      }
+        dispatch(displayRepos(name, description, cloneUrl, repoId))
+      } else {
+        dispatch(displayRepos("just kidding", "there are no repos", "sorry", repoId))
+      };
     });
   };
 }

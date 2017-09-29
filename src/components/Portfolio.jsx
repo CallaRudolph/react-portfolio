@@ -7,16 +7,16 @@ import Repos from './Repos';
 const Portfolio = ({ dispatch, portfolio }) => {
   let formAreaContent;
   var avatar = {
-    width: "150",
-    height: "150",
+    width: 150,
+    height: 150,
     float: "right",
-    borderRadius: "10"
+    borderRadius: 10
   }
   var content = {
     backgroundImage: "url(" + Blood + ")",
-    textShadow: "1px 1px white",
+    textShadow: "1px 1px black",
     opacity: ".87",
-    color: "#69585F"
+    color: "red"
   }
   if (portfolio.portfolioId === 0) {
     formAreaContent =
@@ -37,7 +37,7 @@ const Portfolio = ({ dispatch, portfolio }) => {
       <h4>There's much more info on my <a href={portfolio.calla.url}>GitHub</a></h4>
       <h4>or you could peruse my <a href={portfolio.calla.blog}>LinkedIn</a></h4>
       <h4>Total projects I've created since May 2017:</h4> <h2><em>{portfolio.calla.repos}</em> !!</h2>
-      <Repos/>
+      {/* <Repos/> */}
     </div>
   }
   return (
@@ -48,7 +48,6 @@ const Portfolio = ({ dispatch, portfolio }) => {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   const portfolio = state;
   return {
     portfolio: portfolio
